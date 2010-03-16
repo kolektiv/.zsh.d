@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# Set the window title when we change commands, etc.
+precmd () {
+    print -Pn "\e]0;%m: %~\a"
+    print -Pn "\e]1;%m: %~\a"
+    print -Pn "\e]2;%m: %~\a"
+}

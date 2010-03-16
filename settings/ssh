@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+# Use keychain to make sure we've got an ssh-agent running.
+keychain --quiet --nocolor ~/.ssh/id_rsa
+[[ -f ~/.keychain/$HOST-sh ]] && source ~/.keychain/$HOST-sh

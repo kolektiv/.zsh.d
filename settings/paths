@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# Set up local paths (local bin directory first)
+path=(
+    ~/bin 
+    /opt/local/bin 
+    $path
+)

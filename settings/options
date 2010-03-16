@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# Load zsh options.
+setopt autocd notify
+setopt prompt_subst
+setopt prompt_cr
+bindkey -e

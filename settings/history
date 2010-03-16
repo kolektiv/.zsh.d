@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+# Set up our standard settings for history
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000

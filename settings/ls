@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# If gnuls exists we're on BSD for example so we need to alias that.
+if [[ -x `which gnuls` ]]; then
+    alias ls="gnuls -hF --color=auto"
+elif [[ -x `which gls` ]]; then
+    alias ls="gls -hF --color=auto"
+else
+    alias ls="ls -hF --color=auto"
+fi
+
+# We should always have dircolors installed somewhere.
+eval $(dircolors -b ~/.dircolors)
