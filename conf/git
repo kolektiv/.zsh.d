@@ -168,5 +168,42 @@ git_init() {
     precmd_functions+='git_precmd_hook'
 }
 
+revision() {
+    git describe --always $1 2>/dev/null ||
+    git rev-parse --short $1 2>/dev/null
+}
+
+git_info_prompt() {
+    git_is_git || return
+
+    # Standard elements --------------------------------------------------------
+
+    scm='$dark_grey(git::'                              # Git indicator
+    scm+='$med_grey$(git_branch)'                       # Git branch
+    scm+='$dark_grey:'                                  # : separator
+    scm+='$med_grey$(revision $(git_head))'             # Revision identifier
+
+    # Status change indication -------------------------------------------------
+
+    local dirty
+
+    if ! git_is_index_clean; then dirty+="+"; fi        # Files added
+    if ! git_is_work_tree_clean; then dirty+="!"; fi    # Files changed
+    if git_has_unmerged; then dirty+="*"; fi            # Unmerged changes
+    if git_has_untracked; then dirty+="$dark_grey?"; fi # Untracked files
+
+    if [ $#dirty -gt 0 ]; then
+	scm+="$dark_grey | $med_grey$dirty "            # Show status if changed
+    fi
+
+    # Standard elements --------------------------------------------------------
+
+    scm+="$dark_grey)"                                  # Close Git indicator
+
+    # Set prompt ---------------------------------------------------------------
+
+    echo $scm
+}
+
 git_init
 git_update_info

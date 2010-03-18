@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+# Load standard styles.
+zstyle :compinstall filename '/home/andrew/.zshrc'
+
+# Standard colors
+dark_grey="$(print '%{\e[38;5;239m%}')"
+med_grey="$(print '%{\e[38;5;243m%}')"
+light_grey="$(print '%{\e[38;5;252m%}')"
+green_1="$(print '%{\e[38;5;190m%}')"
+green_2="$(print '%{\e[38;5;118m%}')"
+orange_1="$(print '%{\e[38;5;202m%}')"
+orange_2="$(print '%{\e[38;5;214m%}')"
+yellow="$(print '%{\e[38;5;227m%}')"

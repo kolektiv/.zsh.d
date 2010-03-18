@@ -2,54 +2,6 @@
 
 # Load our prompt settings.
 
-# Standard colors
-dark_grey="$(print '%{\e[38;5;239m%}')"
-med_grey="$(print '%{\e[38;5;243m%}')"
-light_grey="$(print '%{\e[38;5;252m%}')"
-green_1="$(print '%{\e[38;5;190m%}')"
-green_2="$(print '%{\e[38;5;118m%}')"
-orange_1="$(print '%{\e[38;5;202m%}')"
-orange_2="$(print '%{\e[38;5;214m%}')"
-yellow="$(print '%{\e[38;5;227m%}')"
-
-git_info() {
-    git_is_git || return
-
-    scm="$dark_grey(git::$med_grey$(git_branch)$dark_grey:$med_grey$(revision $(git_head))"
-
-    local dirty
-
-    if ! git_is_index_clean; then
-	dirty+="+"
-    fi
-
-    if ! git_is_work_tree_clean; then
-	dirty+="!"
-    fi
-
-    if git_has_unmerged; then
-	dirty+="*"
-    fi
-
-    if git_has_untracked; then
-	dirty+="$dark_grey?"
-    fi
-
-    if [ $#dirty -gt 0 ]; then
-	scm+="$dark_grey | $med_grey$dirty "
-    fi
-
-    scm+="$dark_grey)"
-
-    echo $scm
-}
-
-revision() {
-    git describe --always $1 2>/dev/null ||
-    git rev-parse --short $1 2>/dev/null
-}
-
-# Fancy prompt.
 smart_prompt() {
 
     # Prompt data --------------------------------------------------------------
@@ -64,7 +16,7 @@ $med_grey$user$'                     # User name (preceded by newline)
     l_prompt+='$med_grey%m '         # Machine name
     l_prompt+='$dark_grey:: '        # :: separator
     l_prompt+='$light_grey%~ '       # Current path
-    l_prompt+='$(git_info)'          # Git information if relevant
+    l_prompt+='$(git_info_prompt)'   # Git information if relevant
     l_prompt+='
 $green_1%m '                         # Machine name (preceded by newline)
     l_prompt+='$light_grey%(!.#.>) ' # Prompt (varies if root)

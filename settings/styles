@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-# Load standard styles.
-zstyle :compinstall filename '/home/andrew/.zshrc'
