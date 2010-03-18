@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# Set paths
+
+zsh_load_path="$(dirname $(readlink -f $0))"
+zsh_conf_path="$zsh_load_path/conf"
+
+# Load conf files
+
+zsh_conf_files=(paths history options autoload styles ls title git prompt ssh)
+
+for file in $zsh_conf_files; {
+    if [ -f $zsh_conf_path/$file ]; then
+	source $zsh_conf_path/$file
+    else
+	echo "Couldn't load file $zsh_conf_path/$file - file not found"
+    fi
+}

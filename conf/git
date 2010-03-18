@@ -178,10 +178,10 @@ git_info_prompt() {
 
     # Standard elements --------------------------------------------------------
 
-    scm='$dark_grey(git::'                              # Git indicator
-    scm+='$med_grey$(git_branch)'                       # Git branch
-    scm+='$dark_grey:'                                  # : separator
-    scm+='$med_grey$(revision $(git_head))'             # Revision identifier
+    scm="$dark_grey(git::"                              # Git indicator
+    scm+="$med_grey$(git_branch)"                       # Git branch
+    scm+="$dark_grey:"                                  # : separator
+    scm+="$med_grey$(revision $(git_head))"             # Revision identifier
 
     # Status change indication -------------------------------------------------
 
