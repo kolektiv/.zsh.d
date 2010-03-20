@@ -1,8 +1,12 @@
 #!/bin/zsh
 
 # Set paths
+if [ "$(whence greadlink)" ]; then
+    zsh_load_path="$(dirname $(greadlink -f $0))"
+else
+    zsh_load_path="$(dirname $(readlink -f $0))"
+fi
 
-zsh_load_path="$(dirname $(readlink -f $0))"
 zsh_conf_path="$zsh_load_path/conf"
 
 # Load conf files
