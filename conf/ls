@@ -9,5 +9,10 @@ else
     alias ls="ls -hF --color=auto"
 fi
 
+# If dircolors is called gdircolors, alias it.
+if [[ -x `which gdircolors` ]]; then
+    alias dircolors="gdircolors"
+fi
+
 # We should always have dircolors installed somewhere.
 eval $(dircolors -b ~/.dircolors)
