@@ -11,7 +11,8 @@ zsh_conf_path="$zsh_load_path/conf"
 
 # Load conf files
 
-zsh_conf_files=(paths history options autoload styles ls title git prompt ssh)
+zsh_conf_files=(paths history options autoload styles ls title git 
+prompt ssh aliases)
 
 for file in $zsh_conf_files; {
     if [ -f $zsh_conf_path/$file ]; then
