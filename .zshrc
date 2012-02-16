@@ -3,7 +3,7 @@ function setup_cygwin() {
 }
 
 function setup_osx() {
-	ROOTPATH="/Users/andrew/Documents/"; export ROOTPATH
+	ROOTPATH="/Users/andrew/"; export ROOTPATH
 }
 
 if [[ $OSTYPE == "cygwin" ]]; then
@@ -16,7 +16,7 @@ zsh_conf_path="$ROOTPATH/.zsh.d/conf"
 
 # Load conf files
 
-zsh_conf_files=(paths history options autoload styles ls title git prompt ssh aliases)
+zsh_conf_files=(paths history options autoload styles ls title git prompt ssh aliases scripts)
 
 for file in $zsh_conf_files; {
     if [ -f $zsh_conf_path/$file ]; then
