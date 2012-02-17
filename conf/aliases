@@ -1,1 +1,3 @@
 alias gitc="git ls-files -d -z | xargs -0 git update-index --remove"
+
+pg() { pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/postgres.log "$*"; }
