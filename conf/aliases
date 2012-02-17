@@ -1,3 +1,21 @@
+#!/bin/zsh
+
+# Git 
+
+# Alias gitc to commit all "deleted" files.
 alias gitc="git ls-files -d -z | xargs -0 git update-index --remove"
 
-pg() { pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/postgres.log "$*"; }
+# Postgres
+
+# Make pg to take args for pg_ctl (start, stop, etc.)
+pg() { 
+    pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/postgres.log "$*"; 
+}
+
+# MongoDB
+
+# Make mg start MongoDB with any options on the end.
+mg() { 
+    echo -ne "\e]1;Running: MongoDB\a";
+    mongod run --config /usr/local/etc/mongod.conf --rest "$@";
+}
