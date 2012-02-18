@@ -19,3 +19,12 @@ mg() {
     echo -ne "\e]1;Running: MongoDB\a";
     mongod run --config /usr/local/etc/mongod.conf --rest "$@";
 }
+
+# RabbitMQ
+
+# Make rq start RabbitMQ
+rq() {
+    echo -ne "\e]1;Running: RabbitMQ\a";
+    rabbitmq-server;
+}
+
