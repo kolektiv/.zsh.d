@@ -25,3 +25,5 @@ for file in $zsh_conf_files; {
 	echo "Couldn't load file $zsh_conf_path/$file - file not found"
     fi
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
