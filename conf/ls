@@ -2,11 +2,11 @@
 
 # If gnuls exists we're on BSD for example so we need to alias that.
 if [[ -x `which gnuls` ]]; then
-    alias ls="gnuls -hF --color=auto"
+    alias ls="gnuls -hF --color=auto --group-directories-first"
 elif [[ -x `which gls` ]]; then
-    alias ls="gls -hF --color=auto"
+    alias ls="gls -hF --color=auto --group-directories-first"
 else
-    alias ls="ls -hF --color=auto"
+    alias ls="ls -hF --color=auto --group-directories-first"
 fi
 
 # If dircolors is called gdircolors, alias it.
