@@ -15,4 +15,4 @@ if [[ -x `which gdircolors` ]]; then
 fi
 
 # We should always have dircolors installed somewhere.
-eval $(dircolors -b $ROOTPATH/.home.d/.dircolors)
+eval $(dircolors -b ~/.dircolors)
