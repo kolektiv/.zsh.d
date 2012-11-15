@@ -1,5 +1,6 @@
 function setup_cygwin() {
 	SHELL="$(cygpath -m $(which zsh))"; export SHELL
+	ROOTPATH="/cygdrive/c/Users/Andrew/Home"; export ROOTPATH
 }
 
 function setup_osx() {
