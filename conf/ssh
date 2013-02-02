@@ -2,6 +2,6 @@
 
 if which keychain >/dev/null; then
     # Use keychain to make sure we've got an ssh-agent running.
-    keychain --quiet --nocolor ~/.ssh/xyncro ~/.ssh/15below
+    keychain --quiet --nocolor ~/.ssh/xyncro
     [[ -f ~/.keychain/$HOST-sh ]] && source ~/.keychain/$HOST-sh
 fi
