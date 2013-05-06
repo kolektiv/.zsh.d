@@ -5,12 +5,11 @@ function setup_cygwin() {
 
 function setup_osx() {
 	ROOTPATH="/Users/andrew/"; export ROOTPATH
-	source "/opt/boxen/env.sh"
 }
 
 if [[ $OSTYPE == "cygwin" ]]; then
 	setup_cygwin
-elif [[ $OSTYPE == "darwin12.2.1" ]]; then
+elif [[ $OSTYPE == "darwin12.3.0" ]]; then
 	setup_osx
 fi
 
