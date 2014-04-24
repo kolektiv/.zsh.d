@@ -9,7 +9,7 @@ function setup_osx() {
 
 if [[ $OSTYPE == "cygwin" ]]; then
 	setup_cygwin
-elif [[ $OSTYPE == "darwin12.3.0" ]]; then
+elif [[ $OSTYPE == "darwin13.0.0" ]]; then
 	setup_osx
 fi
 

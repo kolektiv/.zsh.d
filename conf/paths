@@ -1,5 +1,5 @@
 #!/bin/zsh
 
 # Set up local paths (local bin directory first)
-export PATH=~/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/share/npm/bin
+export PATH=~/.cabal/bin:~/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/share/npm/bin
 export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
