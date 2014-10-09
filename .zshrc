@@ -9,7 +9,7 @@ function setup_osx() {
 
 if [[ $OSTYPE == "cygwin" ]]; then
 	setup_cygwin
-elif [[ $OSTYPE == "darwin13.0.0" ]]; then
+elif [[ $OSTYPE == "darwin13.3.0" ]]; then
 	setup_osx
 fi
 
@@ -26,3 +26,8 @@ for file in $zsh_conf_files; {
 	echo "Couldn't load file $zsh_conf_path/$file - file not found"
     fi
 }
+
+source /usr/local/share/zsh/site-functions/git-flow-completion.zsh
+            
+# OPAM configuration
+. /Users/andrew/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
