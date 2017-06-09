@@ -1,5 +1,13 @@
 #!/bin/zsh
 
+# .zpath - Personal ZSH Configuration
+
+# Author: Andrew Cherry <andrew@xyncro.com>
+# Keywords: zsh, init
+# URL: https://github.com/kolektiv/.zsh.d
+
+# Code:
+
 # ==============================================================================
 
 # Path
@@ -7,8 +15,6 @@
 # Amend the path for specific programs, environments, etc. Path amendments are
 # usually associated with either a class of binary (local, local system, etc.)
 # or are associated with a specific program/language (e.g. packaging systems).
-
-# ------------------------------------------------------------------------------
 
 PATH=$PATH
 
@@ -27,3 +33,7 @@ if [[ `uname` != 'Darwin' ]] then;
    PATH=$PATH:/usr/local/sbin
 
 fi
+
+# ------------------------------------------------------------------------------
+
+# .zpath ends here
