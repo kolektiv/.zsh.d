@@ -19,9 +19,9 @@ PATH=$PATH
 if [[ `uname` != 'Darwin' ]] then;
 
    # Local Binaries (/usr/local/bin, usually managed by Homebrew)
- 
+
    PATH=/usr/local/bin:$PATH
- 
+
    # Local System Binaries (/usr/local/sbin, some programs use it)
 
    PATH=$PATH:/usr/local/sbin
