@@ -1,0 +1,29 @@
+#!/bin/zsh
+
+# ==============================================================================
+
+# Path
+
+# Amend the path for specific programs, environments, etc. Path amendments are
+# usually associated with either a class of binary (local, local system, etc.)
+# or are associated with a specific program/language (e.g. packaging systems).
+
+# ------------------------------------------------------------------------------
+
+PATH=$PATH
+
+# On MacOS (and probably some *nixes), /etc/profile is sourced after .zshenv,
+# wiping out PATH definitions set here. The path_helper utility on MacOS
+# should instead be used to manage modifications to the PATH.
+
+if [[ `uname` != 'Darwin' ]] then;
+
+   # Local Binaries (/usr/local/bin, usually managed by Homebrew)
+ 
+   PATH=/usr/local/bin:$PATH
+ 
+   # Local System Binaries (/usr/local/sbin, some programs use it)
+
+   PATH=$PATH:/usr/local/sbin
+
+fi
