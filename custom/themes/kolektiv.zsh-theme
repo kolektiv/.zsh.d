@@ -82,16 +82,16 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=""
 # Prompt SHA
 
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" ${at} ${g1}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER=" ${g0}"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER=" ${g2}-> ${g0}"
 
 # Prompt Status
 
-ZSH_THEME_GIT_PROMPT_UNTRACKED="? "
-ZSH_THEME_GIT_PROMPT_ADDED="+ "
-ZSH_THEME_GIT_PROMPT_MODIFIED="! "
-ZSH_THEME_GIT_PROMPT_RENAMED="~ "
-ZSH_THEME_GIT_PROMPT_DELETED="- "
-ZSH_THEME_GIT_PROMPT_UNMERGED="* "
+ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
+ZSH_THEME_GIT_PROMPT_ADDED="+"
+ZSH_THEME_GIT_PROMPT_MODIFIED="!"
+ZSH_THEME_GIT_PROMPT_RENAMED="~"
+ZSH_THEME_GIT_PROMPT_DELETED="-"
+ZSH_THEME_GIT_PROMPT_UNMERGED="*"
 
 # Prompt Remote Status
 
@@ -103,7 +103,7 @@ ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_SUFFIX=" ${pipe} "
 
 # Prompt
 
-RPROMPT='$(git_prompt_info)$(git_prompt_short_sha)$(git_prompt_status)$(git_remote_status)${g1}%D{%Y-%m-%d %H:%M:%S}${g0}'
+RPROMPT='$(git_prompt_info)$(git_prompt_status)$(git_prompt_short_sha)$(git_remote_status)${g1}%D{%Y-%m-%d %H:%M:%S}${g0}'
 
 # ------------------------------------------------------------------------------
 
