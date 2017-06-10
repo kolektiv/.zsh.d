@@ -42,9 +42,9 @@ local dot="${g2}."
 
 # Prompt 1
 
-# A simple multiline prompt1, showing user/machine identity and current
-# location on the first line, and a simple privilege indicator (showing return
-# status as a warning colour if needed) and arrow prompt.
+# A simple multiline prompt1, showing user/machine identity, history, shell
+# level and current location on the first line, and a simple privilege indicator
+# (showing return status as a warning colour if needed) and arrow prompt.
 
 local identity="${g1}%n ${at} ${g1}%m"
 local hist="${g2}hist ${g1}%h"
@@ -64,9 +64,9 @@ ${privilege}${arrow} "
 
 # Right Prompt
 
-# A status displaying right prompt, with datetime, history number and shell
-# level always displayed, and contextual git, nvm, etc. information displayed
-# when relevant.
+# A right prompt for contextual information, showing a base datetime (always
+# present) and optional extra information displays, such as git status and info
+# in working directories, etc.
 
 # Git
 
