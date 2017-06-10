@@ -103,7 +103,7 @@ ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_SUFFIX=" ${pipe} "
 
 # Prompt
 
-RPROMPT='$(git_prompt_info)$(git_prompt_status)$(git_prompt_short_sha)$(git_remote_status)${g1}%D{%Y-%m-%d %H:%M:%S}${g0}'
+RPROMPT='$(git_prompt_info)$(git_prompt_status)$(git_prompt_short_sha)$(git_remote_status)${g2}%D{%Y-%m-%d %H:%M:%S}${g0}'
 
 # ------------------------------------------------------------------------------
 
