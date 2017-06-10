@@ -68,23 +68,15 @@ ${privilege}${arrow} "
 # level always displayed, and contextual git, nvm, etc. information displayed
 # when relevant.
 
-local datetime="${g1}%D{%Y-%m-%d}"
-
 # Git
-
-# Prompt Info
 
 ZSH_THEME_GIT_PROMPT_PREFIX="${g2}git ${g1}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" ${g0}*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 
-# Prompt SHA
-
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" ${at} ${g1}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER=" ${g2}-> ${g0}"
-
-# Prompt Status
 
 ZSH_THEME_GIT_PROMPT_UNTRACKED="?"
 ZSH_THEME_GIT_PROMPT_ADDED="+"
@@ -93,17 +85,24 @@ ZSH_THEME_GIT_PROMPT_RENAMED="~"
 ZSH_THEME_GIT_PROMPT_DELETED="-"
 ZSH_THEME_GIT_PROMPT_UNMERGED="*"
 
-# Prompt Remote Status
-
+ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_DETAILED=true
 ZSH_THEME_GIT_PROMPT_EQUAL_REMOTE=" ${g1}=="
 ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE=" ${g0}+"
 ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE=" ${g0}-"
 ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_PREFIX="${g1}"
 ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_SUFFIX=" ${pipe} "
 
+function git_info() {
+    echo "$(git_prompt_info)$(git_prompt_status)$(git_prompt_short_sha)$(git_remote_status)"
+}
+
+# Datetime
+
+local datetime="${g2}%D{%Y-%m-%d %H:%M:%S}"
+
 # Prompt
 
-RPROMPT='$(git_prompt_info)$(git_prompt_status)$(git_prompt_short_sha)$(git_remote_status)${g2}%D{%Y-%m-%d %H:%M:%S}${g0}'
+RPROMPT='$(git_info)${datetime}${g0}'
 
 # ------------------------------------------------------------------------------
 
