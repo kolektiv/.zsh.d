@@ -42,15 +42,13 @@ ZSH_THEME="kolektiv"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -71,9 +69,27 @@ plugins=()
 
 # ------------------------------------------------------------------------------
 
+# brew
+
+plugins=($plugins brew)
+
+# ------------------------------------------------------------------------------
+
 # git
 
 plugins=($plugins git)
+
+# ------------------------------------------------------------------------------
+
+# npm
+
+plugins=($plugins npm)
+
+# ------------------------------------------------------------------------------
+
+# nvm
+
+plugins=($plugins nvm)
 
 # ------------------------------------------------------------------------------
 
@@ -81,10 +97,22 @@ plugins=($plugins git)
 
 plugins=($plugins tmux)
 
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOSTART_ONCE=true
-ZSH_TMUX_AUTOCONNECT=true
-ZSH_TMUX_FIXTERM=false
+# ------------------------------------------------------------------------------
+
+# tmuxinator
+
+plugins=($plugins tmuxinator)
+
+# ==============================================================================
+
+# Aliases
+
+# ------------------------------------------------------------------------------
+
+# tmuxinator
+
+alias mux='tmuxinator'
+alias muxs='tmuxinator start .'
 
 # ==============================================================================
 
