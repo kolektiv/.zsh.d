@@ -58,8 +58,15 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-
 HIST_STAMPS="yyyy-mm-dd"
+
+# ==============================================================================
+
+# Settings
+
+# History file location
+
+HISTFILE="${ZDOTDIR}/.zsh_history"
 
 # ==============================================================================
 
