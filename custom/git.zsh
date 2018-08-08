@@ -10,6 +10,27 @@
 
 # ==============================================================================
 
+# Dirty
+
+# Modified to remove flag skipping dirty checking of submodules.
+
+function parse_git_dirty() {
+    local STATUS=''
+    local -a FLAGS
+    FLAGS=('--porcelain')
+    if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
+        if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
+            FLAGS+='--untracked-files=no'
+        fi
+        STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
+    fi
+    if [[ -n $STATUS ]]; then
+        echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
+    else
+        echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
+    fi
+}
+
 # Remote
 
 # Modified to include the equals indicator in the detailed remote status.
