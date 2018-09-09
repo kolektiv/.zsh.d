@@ -16,6 +16,11 @@
 
 export ZDOTDIR=${HOME}/.zsh.d
 
+# ZSH/OhMyZSH
+
+export ZSH=${HOME}/.oh-my-zsh
+export ZSH_CUSTOM=${ZDOTDIR}/custom
+
 # ------------------------------------------------------------------------------
 
 # ASDF
