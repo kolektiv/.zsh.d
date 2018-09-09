@@ -18,6 +18,15 @@ export ZDOTDIR=${HOME}/.zsh.d
 
 # ------------------------------------------------------------------------------
 
+# ASDF
+
+# Set the ASDF_DIR variable to point to the correct location when using ASDF via
+# Homebrew.
+
+export ASDF_DIR=/usr/local/opt/asdf
+
+# ------------------------------------------------------------------------------
+
 # Path
 
 # Configuration of the PATH is managed by sourcing a single .zpath file, which
