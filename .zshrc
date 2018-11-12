@@ -79,6 +79,16 @@ source $ZSH/oh-my-zsh.sh
 
 # ------------------------------------------------------------------------------
 
+# Code
+
+CODE_ROOT="${HOME}/.vscode.d"
+CODE_EXTS="${CODE_ROOT}/extensions"
+CODE_USER="${CODE_ROOT}/user"
+
+alias code='code --extensions-dir=${CODE_EXTS} --user-data-dir=${CODE_USER}'
+
+# ------------------------------------------------------------------------------
+
 # ls
 
 alias ls='gls --color=auto --group-directories-first'
