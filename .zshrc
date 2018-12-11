@@ -65,13 +65,14 @@ HISTFILE="${ZDOTDIR}/.zsh_history"
 
 # Plugins
 
-plugins=(asdf brew git npm npx stack tmux tmuxinator)
+plugins=(brew cargo git npm npx nvm rust stack tmux tmuxinator)
 
 # ==============================================================================
 
 # Load
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.cargo/env
 
 # ==============================================================================
 
